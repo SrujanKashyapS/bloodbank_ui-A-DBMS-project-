@@ -1,3 +1,71 @@
+# Bloodbank UI
+
+Frontend for the Bloodbank management system — a Next.js app providing the UI and API routes used by the project.
+
+**Project layout (selected)**
+- `app/` — Next.js app directory (routes, pages, components)
+- `app/api/` — server API routes (donors, requests, stock, units, health-records, agreements)
+- `lib/db.js` — MySQL connection helper (reads DB credentials from environment variables)
+- `public/` — static assets
+
+**Prerequisites**
+- Node.js (modern LTS, e.g. Node 18+)
+- npm or yarn
+- A running MySQL-compatible database for the app's API routes
+
+Getting started
+
+1. Install dependencies:
+
+```powershell
+npm install
+```
+
+2. Create an environment file at the project root named `.env.local` and set the database variables (this file is ignored by Git):
+
+```text
+DB_HOST=localhost
+DB_USER=your_db_user
+DB_PASSWORD=your_db_password
+DB_NAME=your_database
+# optional
+DB_PORT=3306
+```
+
+3. Run the development server:
+
+```powershell
+npm run dev
+```
+
+Build and run
+
+```powershell
+npm run build
+npm start
+```
+
+Available scripts (from `package.json`)
+- `dev` — run Next.js in development mode
+- `build` — build the production app
+- `start` — start the production server
+- `lint` — run ESLint
+
+Environment variables
+- The application reads database connection settings from environment variables used in `lib/db.js`:
+  - `DB_HOST`
+  - `DB_USER`
+  - `DB_PASSWORD`
+  - `DB_NAME`
+  - `DB_PORT` (optional)
+
+Security and git
+- The repository includes a `.gitignore` entry for environment files (e.g. `.env`, `.env.local`, `.env.*.local`). Do NOT commit credentials.
+
+Notes
+- This is a UI + API project built with Next.js 16. Adjust Node version and tooling to match your environment if necessary.
+
+If you'd like, I can commit these files for you or expand the README with architecture diagrams, endpoint examples, or deployment instructions. Which would you prefer?
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
